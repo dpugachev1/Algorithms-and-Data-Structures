@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithms_and_Data_Structures.Sorting;
+using System;
 
 namespace Algorithms_and_Data_Structures
 {
@@ -6,7 +7,12 @@ namespace Algorithms_and_Data_Structures
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			int[] arr = new int[] { 8, 5, 7, 1, 9, 3, 2, 3, 4,6,7,8,8,1,-1,9381,1,2,2,3,4,451,41};
+			//int[] sortedAdd = SelectionSort.sort(arr);
+			int[] sortedAdd = InsertionSort.sort(arr);
+			foreach (int i in arr)
+				Console.Write(i + " ");
+			Console.ReadLine();
 		}
 	}
 }

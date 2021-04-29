@@ -47,7 +47,7 @@ namespace Algorithms_and_Data_Structures.LeetCode
             }
             if (iRemainder == 1)
             {
-                sResult.Enqueue(iRemainder);
+                sResult.Enqueue(iRemainder); 
             }
 
 

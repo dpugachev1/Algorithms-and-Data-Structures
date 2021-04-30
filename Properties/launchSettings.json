@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Algorithms and Data Structures": {
+      "commandName": "Project",
+      "commandLineArgs": "BinarySearch"
+    }
+  }
+}

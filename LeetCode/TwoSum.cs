@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Algorithms_and_Data_Structures.LeetCode
 {
-    public class TwoSumClass
+    public static class TwoSumClass
     {
-        public int[] TwoSum(int[] nums, int target)
+        public static int[] TwoSum(int[] nums, int target)
         {
             //using hashtable to store values because of getting an element takes O(1) time
             Dictionary<int, int> hashtable = new Dictionary<int, int>(nums.Length);

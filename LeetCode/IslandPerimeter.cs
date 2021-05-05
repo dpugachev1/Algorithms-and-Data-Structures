@@ -14,6 +14,7 @@ namespace Algorithms_and_Data_Structures.LeetCode
 	public class IslandPerimeterCalculator
 	{
 		private int ccter = 0;
+		private int perimeter = 0;
 
 		public int IslandPerimeter(int[][] grid)
 		{
@@ -60,11 +61,10 @@ namespace Algorithms_and_Data_Structures.LeetCode
 
 		private int isEdge(int[][] grid, int i, int j)
 		{
-			int perimeter = 0;
+			perimeter = 0;
 
 			if (j <= 0 || grid[i][j - 1] == 0) perimeter++; //LEFT border
 			if (j >= grid[i].Length - 1 || grid[i][j + 1] == 0) perimeter++; //RIGHT border 
-
 			if (i <= 0 || grid[i - 1][j] == 0) perimeter++; //TOP border
 			if (i >= grid.Length - 1 || grid[i + 1][j] == 0) perimeter++; //BOTTOM border
 

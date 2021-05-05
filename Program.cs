@@ -14,8 +14,9 @@ public  class TrainComposition
         LeetCode_TwoNumbers = 103,
         LeetCode_NumberOfIslands = 104,
         LeetCode_LRU_Cache = 105,
-        LeetCode_CriticalConnections = 106
-    }
+        LeetCode_CriticalConnections = 106,
+		LeetCode_IslandPerimeter = 107
+	}
 
     private static void InitializeProgramLookup()
 	{
@@ -25,7 +26,8 @@ public  class TrainComposition
         programLookup.Add(ProgramCommands.LeetCode_NumberOfIslands, LeetCode_NumberOfIslands);
         programLookup.Add(ProgramCommands.LeetCode_LRU_Cache, LeetCode_LRU_Cache);
         programLookup.Add(ProgramCommands.LeetCode_CriticalConnections, LeetCode_CriticalConnections);
-    }
+		programLookup.Add(ProgramCommands.LeetCode_IslandPerimeter, LeetCode_IslandPerimeter);
+	}
 
 
 	public static void Main(string[] args)
@@ -137,5 +139,21 @@ public  class TrainComposition
 		network.CriticalConnections(3, lConnections);
 		return 0;
     }
+
+	private static int LeetCode_IslandPerimeter()
+	{
+		int[][] grid = new int[][]
+		{ 
+			new int[] { 1, 1 }
+			//, 1, 0, 0 },
+			//new int[] { 1, 1, 1, 0 },
+			//new int[] { 0, 1, 0, 0 },
+			//new int[] { 1, 1, 0, 0 } 
+		};
+		IslandPerimeterCalculator calculator = new IslandPerimeterCalculator();
+		int iResult = calculator.IslandPerimeter(grid);
+
+		return 0;
+	}
 	#endregion
 }

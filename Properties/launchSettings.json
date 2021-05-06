@@ -2,7 +2,7 @@
   "profiles": {
     "Algorithms and Data Structures": {
       "commandName": "Project",
-      "commandLineArgs": "LeetCode_IslandPerimeter"
+      "commandLineArgs": "Amazon_RobotBoundedInCircle"
     }
   }
 }

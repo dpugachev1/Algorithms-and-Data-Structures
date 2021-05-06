@@ -1,4 +1,5 @@
 ﻿using Algorithms_and_Data_Structures;
+using Algorithms_and_Data_Structures.Amazon;
 using Algorithms_and_Data_Structures.LeetCode;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,8 @@ public  class TrainComposition
         LeetCode_NumberOfIslands = 104,
         LeetCode_LRU_Cache = 105,
         LeetCode_CriticalConnections = 106,
-		LeetCode_IslandPerimeter = 107
+		LeetCode_IslandPerimeter = 107,
+		Amazon_RobotBoundedInCircle = 201
 	}
 
     private static void InitializeProgramLookup()
@@ -27,6 +29,7 @@ public  class TrainComposition
         programLookup.Add(ProgramCommands.LeetCode_LRU_Cache, LeetCode_LRU_Cache);
         programLookup.Add(ProgramCommands.LeetCode_CriticalConnections, LeetCode_CriticalConnections);
 		programLookup.Add(ProgramCommands.LeetCode_IslandPerimeter, LeetCode_IslandPerimeter);
+		programLookup.Add(ProgramCommands.Amazon_RobotBoundedInCircle, Amazon_RobotBoundedInCircle);
 	}
 
 
@@ -153,6 +156,15 @@ public  class TrainComposition
 		IslandPerimeterCalculator calculator = new IslandPerimeterCalculator();
 		int iResult = calculator.IslandPerimeter(grid);
 
+		return 0;
+	}
+
+	private static int Amazon_RobotBoundedInCircle()
+	{
+		string instructions = "GGRRGG";
+		RobotRoundedInCircle calc = new RobotRoundedInCircle();
+		bool b = calc.IsRobotBounded(instructions);
+		Console.WriteLine(b.ToString());
 		return 0;
 	}
 	#endregion

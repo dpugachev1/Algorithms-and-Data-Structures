@@ -1,5 +1,6 @@
 ﻿using Algorithms_and_Data_Structures;
 using Algorithms_and_Data_Structures.Amazon;
+using Algorithms_and_Data_Structures.Graphs_paths_;
 using Algorithms_and_Data_Structures.LeetCode;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,9 @@ public  class TrainComposition
         LeetCode_LRU_Cache = 105,
         LeetCode_CriticalConnections = 106,
 		LeetCode_IslandPerimeter = 107,
-		Amazon_RobotBoundedInCircle = 201
+		LeetCode_LongestUniqueSubstring = 108,
+		Amazon_RobotBoundedInCircle = 201,
+		Graphs_ShortestPathInBinaryMatrix = 301
 	}
 
     private static void InitializeProgramLookup()
@@ -30,6 +33,8 @@ public  class TrainComposition
         programLookup.Add(ProgramCommands.LeetCode_CriticalConnections, LeetCode_CriticalConnections);
 		programLookup.Add(ProgramCommands.LeetCode_IslandPerimeter, LeetCode_IslandPerimeter);
 		programLookup.Add(ProgramCommands.Amazon_RobotBoundedInCircle, Amazon_RobotBoundedInCircle);
+		programLookup.Add(ProgramCommands.Graphs_ShortestPathInBinaryMatrix, ShortestPathInBinaryMatrix);
+		programLookup.Add(ProgramCommands.LeetCode_LongestUniqueSubstring, LongestUniqueSubstringMethod);
 	}
 
 
@@ -49,6 +54,7 @@ public  class TrainComposition
 			return;
 		}
 		programLookup[command].Invoke();
+		Console.ReadLine();
 	}
 
 	#region COMMANDS
@@ -167,5 +173,32 @@ public  class TrainComposition
 		Console.WriteLine(b.ToString());
 		return 0;
 	}
+
+	private static int ShortestPathInBinaryMatrix()
+    {
+		int[][] grid =
+		{
+			 new int[] {0,1,1,1,1,1,1,1},
+			 new int[] {0,1,1,0,0,0,0,0},
+			 new int[] {0,1,0,1,1,1,1,0},
+			 new int[] {0,1,0,1,1,1,1,0},
+			 new int[] {0,1,1,0,0,1,1,0},
+			 new int[] {0,1,1,1,1,0,1,0},
+			 new int[] {0,0,0,0,0,1,1,0},
+			 new int[] {1,1,1,1,1,1,1,0}
+		};
+		
+		return ShortestPathInBinaryMatrixSolution.ShortestPathBinaryMatrix(grid);
+    }
+
+	private static int LongestUniqueSubstringMethod()
+    {
+		//string s = " ";
+		string s = "dvdf";
+		//string s = "aabaab!bb";
+		return LongestUniqueSubstring.LengthOfLongestSubstring(s);
+
+	}
+
 	#endregion
 }

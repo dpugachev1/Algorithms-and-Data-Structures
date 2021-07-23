@@ -2,7 +2,7 @@
   "profiles": {
     "Algorithms and Data Structures": {
       "commandName": "Project",
-      "commandLineArgs": "Amazon_RobotBoundedInCircle"
+      "commandLineArgs": "LeetCode_LongestUniqueSubstring"
     }
   }
 }

@@ -1,9 +1,11 @@
 ﻿using Algorithms_and_Data_Structures;
 using Algorithms_and_Data_Structures.Amazon;
+using Algorithms_and_Data_Structures.Google;
 using Algorithms_and_Data_Structures.Graphs_paths_;
 using Algorithms_and_Data_Structures.LeetCode;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public  class TrainComposition
 {
@@ -19,8 +21,11 @@ public  class TrainComposition
         LeetCode_CriticalConnections = 106,
 		LeetCode_IslandPerimeter = 107,
 		LeetCode_LongestUniqueSubstring = 108,
+		LeetCode_CountPrimes = 109,
 		Amazon_RobotBoundedInCircle = 201,
-		Graphs_ShortestPathInBinaryMatrix = 301
+		Amazon_SpiralMatrix = 202,
+		Graphs_ShortestPathInBinaryMatrix = 301,
+		Google_JustifyText = 401
 	}
 
     private static void InitializeProgramLookup()
@@ -35,6 +40,9 @@ public  class TrainComposition
 		programLookup.Add(ProgramCommands.Amazon_RobotBoundedInCircle, Amazon_RobotBoundedInCircle);
 		programLookup.Add(ProgramCommands.Graphs_ShortestPathInBinaryMatrix, ShortestPathInBinaryMatrix);
 		programLookup.Add(ProgramCommands.LeetCode_LongestUniqueSubstring, LongestUniqueSubstringMethod);
+		programLookup.Add(ProgramCommands.LeetCode_CountPrimes, LeetCode_CountPrimes);
+		programLookup.Add(ProgramCommands.Amazon_SpiralMatrix, Amazon_SpiralMatrix);
+		programLookup.Add(ProgramCommands.Google_JustifyText, Google_Justify);
 	}
 
 
@@ -198,6 +206,32 @@ public  class TrainComposition
 		//string s = "aabaab!bb";
 		return LongestUniqueSubstring.LengthOfLongestSubstring(s);
 
+	}
+
+	private static int LeetCode_CountPrimes()
+    {
+		int n = 1000;
+		return CountPrimes.Primes(n);
+    }
+
+	private static int Amazon_SpiralMatrix()
+    {
+        int[][] matrix = new int[][]
+            {
+			new int[] { 1,2,3,4},
+			new int[] { 5,6,7,8},
+			new int[] { 9,10,11,12 }
+			};
+
+        SpiralMatrix.SpiralOrder(matrix);
+		return 0;
+    }
+
+	private static int Google_Justify()
+	{
+		string[] arr = new string[] { "This", "is", "an", "example", "of", "text", "justification." };
+		List<string> output = JustifyText.FullJustify(arr, 16).ToList<string>();
+		return 0;
 	}
 
 	#endregion

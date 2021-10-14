@@ -6,6 +6,7 @@ using Algorithms_and_Data_Structures.LeetCode;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 public  class TrainComposition
 {
@@ -25,7 +26,8 @@ public  class TrainComposition
 		Amazon_RobotBoundedInCircle = 201,
 		Amazon_SpiralMatrix = 202,
 		Graphs_ShortestPathInBinaryMatrix = 301,
-		Google_JustifyText = 401
+		Google_JustifyText = 401,
+		Google_TimeBasedKeyValueStorage = 402
 	}
 
     private static void InitializeProgramLookup()
@@ -43,6 +45,7 @@ public  class TrainComposition
 		programLookup.Add(ProgramCommands.LeetCode_CountPrimes, LeetCode_CountPrimes);
 		programLookup.Add(ProgramCommands.Amazon_SpiralMatrix, Amazon_SpiralMatrix);
 		programLookup.Add(ProgramCommands.Google_JustifyText, Google_Justify);
+		programLookup.Add(ProgramCommands.Google_TimeBasedKeyValueStorage, Google_TimeBasedKeyValueStorage);
 	}
 
 
@@ -120,7 +123,20 @@ public  class TrainComposition
 		return 0;
     }
 
-    private static int LeetCode_LRU_Cache()
+	public double getHitProbability(int R, int C, int[,] G)
+	{
+		// Write your code here
+		int ones = 0;
+		for (int i = 0; i < R; i++)
+		{
+			for (int j = 0; j < C; j++)
+				if (G[i, j] == 1)
+					ones++;
+		}
+		
+		return Math.Round((double)ones / (R * C), 6);
+	}
+	private static int LeetCode_LRU_Cache()
     {
 		LRUCache cache = new LRUCache(2);
 		int iReturn = 0;
@@ -208,6 +224,19 @@ public  class TrainComposition
 
 	}
 
+	public string getWrongAnswers(int N, string C)
+	{ StringBuilder builder = new StringBuilder(C);
+    // Write your code here
+    for (int i = 0; i<C.Length; i++)
+    {
+        if (C[i] == 'A')
+          builder[i] = 'B';
+        else
+          builder[i] = 'A';
+    }
+	return builder.ToString();
+  }
+
 	private static int LeetCode_CountPrimes()
     {
 		int n = 1000;
@@ -233,6 +262,25 @@ public  class TrainComposition
 		List<string> output = JustifyText.FullJustify(arr, 16).ToList<string>();
 		return 0;
 	}
+
+	private static int Google_TimeBasedKeyValueStorage()
+    {
+		TimeBasedKeyValueStorage timeMap = new TimeBasedKeyValueStorage();
+		timeMap.Set("foo", "bar", 1);  // store the key "foo" and value "bar" along with timestamp = 1.
+		timeMap.Get("foo", 1);         // return "bar"
+		timeMap.Get("foo", 3);         // return "bar", since there is no value corresponding to foo at timestamp 3 and timestamp 2, then the only value is at timestamp 1 is "bar".
+		timeMap.Set("foo", "bar2", 4); // store the key "foo" and value "ba2r" along with timestamp = 4.
+		timeMap.Get("foo", 4);         // return "bar2"
+		timeMap.Get("foo", 5);         // return "bar2"
+		//timeMap.Set("love", "high", 10);
+		//timeMap.Set("love", "love", 20);
+		//timeMap.Get("love", 15);
+		//timeMap.Get("love", 25);
+		return 0;
+	}
+	//["TimeMap","set","set","get","get","get","get","get"]
+	//[[],["love","high",10],["love","low",20],["love",5],["love",10],["love",15],["love",20],["love",25]]
+
 
 	#endregion
 }

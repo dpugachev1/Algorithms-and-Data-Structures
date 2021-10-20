@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Algorithms_and_Data_Structures.Google
 {
@@ -66,6 +67,32 @@ namespace Algorithms_and_Data_Structures.Google
 
             return minStops; /*cannot reach it*/
 
+        }
+
+
+        public int MinRefuelStops_DynamicProgramming(int target, int startFuel, int[][] stations)
+        {
+            int N = stations.Length;
+            //dp is a maximum distance can be reached if I stopped at "t" fuel stops from total of "i" fuel stops
+            long[] dp = new long[N + 1];
+            dp[0] = startFuel;
+            for (int i = 0; i < N; i++)
+            {
+                for (int t = i; t >= 0; t--)
+                {
+                    /*
+                    if you can reach current station stations[i][1] from [t] number of stations
+                    and will refuel at current stop
+                    and with refuel it will be more distance than without refuel at current station
+                    then we update [t + 1] because we adding the current station to the "refuel" list
+                    */
+                    if (dp[t] >= stations[i][0])
+                        dp[t + 1] = Math.Max(dp[t + 1], dp[t] + (long)stations[i][1]);
+                }
+            }
+            for (int i = 0; i <= N; i++)
+                if (dp[i] >= target) return i;
+            return -1;
         }
     }
 }

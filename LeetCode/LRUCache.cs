@@ -41,6 +41,8 @@ namespace Algorithms_and_Data_Structures.LeetCode
             }
             else
             {
+                
+
                 if (_cache.Count == iCapacity) //if capacity is reached
                 {
                     LinkedListNode<int[]> firstNode = _usage.First; //lowest priority key

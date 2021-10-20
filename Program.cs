@@ -27,7 +27,9 @@ public  class TrainComposition
 		Amazon_SpiralMatrix = 202,
 		Graphs_ShortestPathInBinaryMatrix = 301,
 		Google_JustifyText = 401,
-		Google_TimeBasedKeyValueStorage = 402
+		Google_TimeBasedKeyValueStorage = 402,
+		Google_MinimumNumberOfRefuelingStops = 403,
+		Google_OptimalAccountBalancing = 404
 	}
 
     private static void InitializeProgramLookup()
@@ -46,6 +48,8 @@ public  class TrainComposition
 		programLookup.Add(ProgramCommands.Amazon_SpiralMatrix, Amazon_SpiralMatrix);
 		programLookup.Add(ProgramCommands.Google_JustifyText, Google_Justify);
 		programLookup.Add(ProgramCommands.Google_TimeBasedKeyValueStorage, Google_TimeBasedKeyValueStorage);
+		programLookup.Add(ProgramCommands.Google_MinimumNumberOfRefuelingStops, Google_MinimumNumberOfRefuelingStops);
+		programLookup.Add(ProgramCommands.Google_OptimalAccountBalancing, Google_OptimalAccountBalancing);
 	}
 
 
@@ -69,6 +73,19 @@ public  class TrainComposition
 	}
 
 	#region COMMANDS
+
+	private static int Google_OptimalAccountBalancing()
+    {
+		int[][] matrix = new int[][]
+		{
+				new int[] { 0, 1, 10},
+				new int[] { 2, 0, 5 }
+		};
+
+		OptimalAccountBalancing balancing = new OptimalAccountBalancing();
+		return balancing.MinTransfers(matrix);
+    }
+
 	private static int BinarySearch()
 	{
         Console.WriteLine(BinarySearcher.Search(new int[] { 1, 2, 4, 5, 6, 7, 8, 11, 15, 20, 25 }, 25).ToString());
@@ -281,6 +298,30 @@ public  class TrainComposition
 	//["TimeMap","set","set","get","get","get","get","get"]
 	//[[],["love","high",10],["love","low",20],["love",5],["love",10],["love",15],["love",20],["love",25]]
 
+	private static int Google_MinimumNumberOfRefuelingStops()
+    {
+		MinimumNumberOfRefuelingStops stops = new MinimumNumberOfRefuelingStops();
+		int[][] stations = new int[4][];
+		stations[0] = new int[2];
+		stations[1] = new int[2];
+		stations[2] = new int[2];
+		stations[3] = new int[2];
+
+		stations[0][0] = 10;
+		stations[0][1] = 60;
+
+		stations[1][0] = 20;
+		stations[1][1] = 30;
+
+		stations[2][0] = 30;
+		stations[2][1] = 30;
+
+		stations[3][0] = 60;
+		stations[3][1] = 40;
+
+		stops.MinRefuelStops_DynamicProgramming(100, 10, stations);
+		return 0;
+    }
 
 	#endregion
 }

@@ -38,7 +38,7 @@ namespace Algorithms_and_Data_Structures.Graphs_paths_
             pathFinderCounter++;
             visited[i, j] = true;
 
-            //try 8-directonal movement BFS
+            //try 8-directonal movement DFS
             return
                 NextStep(grid, visited, i + 1, j + 1, n) || // bottom right
                 NextStep(grid, visited, i + 1, j, n) || //bottom            

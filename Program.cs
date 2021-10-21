@@ -3,10 +3,14 @@ using Algorithms_and_Data_Structures.Amazon;
 using Algorithms_and_Data_Structures.Google;
 using Algorithms_and_Data_Structures.Graphs_paths_;
 using Algorithms_and_Data_Structures.LeetCode;
+using Algorithms_and_Data_Structures.Microsoft;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using LRUCache = Algorithms_and_Data_Structures.LeetCode.LRUCache;
+using NumberOfIslands = Algorithms_and_Data_Structures.LeetCode.NumberOfIslands;
+using SpiralMatrix = Algorithms_and_Data_Structures.Amazon.SpiralMatrix;
 
 public  class TrainComposition
 {
@@ -29,7 +33,8 @@ public  class TrainComposition
 		Google_JustifyText = 401,
 		Google_TimeBasedKeyValueStorage = 402,
 		Google_MinimumNumberOfRefuelingStops = 403,
-		Google_OptimalAccountBalancing = 404
+		Google_OptimalAccountBalancing = 404,
+		Microsoft_LetterCombinationOfPhoneNumber = 501
 	}
 
     private static void InitializeProgramLookup()
@@ -56,6 +61,11 @@ public  class TrainComposition
 	public static void Main(string[] args)
 	{
 		InitializeProgramLookup();
+
+		LetterCombinationOfPhoneNumber comb = new LetterCombinationOfPhoneNumber();
+		comb.LetterCombinations("234");
+		Console.ReadLine();
+		return;
 
 		if (args == null || args.Length == 0)
 		{

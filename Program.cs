@@ -62,9 +62,9 @@ public  class TrainComposition
 	{
 		InitializeProgramLookup();
 
-		LetterCombinationOfPhoneNumber comb = new LetterCombinationOfPhoneNumber();
-		comb.LetterCombinations("234");
-		Console.ReadLine();
+		SerializeDeserializeBinaryTree deser = new SerializeDeserializeBinaryTree();
+
+        TreeNode ans = deser.deserialize("1;2;x;95;x;5;x;x;3;4;x;x;5;x;x;");
 		return;
 
 		if (args == null || args.Length == 0)

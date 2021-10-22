@@ -8,6 +8,14 @@ namespace Algorithms_and_Data_Structures.Microsoft
     {
         public IList<int> SpiralOrder(int[][] matrix)
         {
+
+            char c = '2';
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append(c);
+            Stack<char> stk = new Stack<char>();
+            
+
             List<int> lElements = new List<int>();
             int i = 0; //current i
             int j = 0; //current j

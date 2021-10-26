@@ -62,9 +62,12 @@ public  class TrainComposition
 	{
 		InitializeProgramLookup();
 
-		SerializeDeserializeBinaryTree deser = new SerializeDeserializeBinaryTree();
+		//		SerializeDeserializeBinaryTree deser = new SerializeDeserializeBinaryTree();
 
-        TreeNode ans = deser.deserialize("1;2;x;95;x;5;x;x;3;4;x;x;5;x;x;");
+		// TreeNode ans = deser.deserialize("1;2;x;95;x;5;x;x;3;4;x;x;5;x;x;");
+		GroupAnagrams groupAnagrams = new GroupAnagrams();
+		groupAnagrams.GroupAnagramsFunction(new string[] { "eat", "tea", "tan", "ate", "nat", "bat" });
+
 		return;
 
 		if (args == null || args.Length == 0)

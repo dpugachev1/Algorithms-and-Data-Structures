@@ -57,10 +57,29 @@ public  class TrainComposition
 		programLookup.Add(ProgramCommands.Google_OptimalAccountBalancing, Google_OptimalAccountBalancing);
 	}
 
-
 	public static void Main(string[] args)
 	{
 		InitializeProgramLookup();
+
+		MergeKSortedLists lists = new MergeKSortedLists();
+		//[[1,4,5],[1,3,4],[2,6]]
+		MergeKSortedLists.ListNode listNode = new MergeKSortedLists.ListNode(1, null);
+		listNode.next = new MergeKSortedLists.ListNode(4, null);
+		listNode.next.next = new MergeKSortedLists.ListNode(5, null);
+
+		MergeKSortedLists.ListNode listNode1 = new MergeKSortedLists.ListNode(1, null);
+		listNode1.next = new MergeKSortedLists.ListNode(3, null);
+		listNode1.next.next = new MergeKSortedLists.ListNode(4, null);
+
+		MergeKSortedLists.ListNode listNode2 = new MergeKSortedLists.ListNode(2, null);
+		listNode2.next = new MergeKSortedLists.ListNode(6, null);
+
+		MergeKSortedLists.ListNode[] nodes = new MergeKSortedLists.ListNode[] { listNode, listNode1, listNode2 };
+
+		lists.MergeKListsCompareOneByOne(nodes);
+
+		SortedDictionary<int, int> keys = new SortedDictionary<int, int>();
+		
 
 		//		SerializeDeserializeBinaryTree deser = new SerializeDeserializeBinaryTree();
 

@@ -61,47 +61,50 @@ public  class TrainComposition
 	{
 		InitializeProgramLookup();
 
-		MergeKSortedLists lists = new MergeKSortedLists();
-		//[[1,4,5],[1,3,4],[2,6]]
-		MergeKSortedLists.ListNode listNode = new MergeKSortedLists.ListNode(1, null);
-		listNode.next = new MergeKSortedLists.ListNode(4, null);
-		listNode.next.next = new MergeKSortedLists.ListNode(5, null);
+		FileSystem obj = new FileSystem();
+		obj.Mkdir("/a/b/c");
 
-		MergeKSortedLists.ListNode listNode1 = new MergeKSortedLists.ListNode(1, null);
-		listNode1.next = new MergeKSortedLists.ListNode(3, null);
-		listNode1.next.next = new MergeKSortedLists.ListNode(4, null);
+		//MergeKSortedLists lists = new MergeKSortedLists();
+		////[[1,4,5],[1,3,4],[2,6]]
+		//MergeKSortedLists.ListNode listNode = new MergeKSortedLists.ListNode(1, null);
+		//listNode.next = new MergeKSortedLists.ListNode(4, null);
+		//listNode.next.next = new MergeKSortedLists.ListNode(5, null);
 
-		MergeKSortedLists.ListNode listNode2 = new MergeKSortedLists.ListNode(2, null);
-		listNode2.next = new MergeKSortedLists.ListNode(6, null);
+		//MergeKSortedLists.ListNode listNode1 = new MergeKSortedLists.ListNode(1, null);
+		//listNode1.next = new MergeKSortedLists.ListNode(3, null);
+		//listNode1.next.next = new MergeKSortedLists.ListNode(4, null);
 
-		MergeKSortedLists.ListNode[] nodes = new MergeKSortedLists.ListNode[] { listNode, listNode1, listNode2 };
+		//MergeKSortedLists.ListNode listNode2 = new MergeKSortedLists.ListNode(2, null);
+		//listNode2.next = new MergeKSortedLists.ListNode(6, null);
 
-		lists.MergeKListsCompareOneByOne(nodes);
+		//MergeKSortedLists.ListNode[] nodes = new MergeKSortedLists.ListNode[] { listNode, listNode1, listNode2 };
 
-		SortedDictionary<int, int> keys = new SortedDictionary<int, int>();
-		
+		//lists.MergeKListsCompareOneByOne(nodes);
 
-		//		SerializeDeserializeBinaryTree deser = new SerializeDeserializeBinaryTree();
+		//SortedDictionary<int, int> keys = new SortedDictionary<int, int>();
 
-		// TreeNode ans = deser.deserialize("1;2;x;95;x;5;x;x;3;4;x;x;5;x;x;");
-		GroupAnagrams groupAnagrams = new GroupAnagrams();
-		groupAnagrams.GroupAnagramsFunction(new string[] { "eat", "tea", "tan", "ate", "nat", "bat" });
 
-		return;
+		////		SerializeDeserializeBinaryTree deser = new SerializeDeserializeBinaryTree();
 
-		if (args == null || args.Length == 0)
-		{
-			Console.WriteLine("No arguments specified.");
-			return;
-		}
-		ProgramCommands command = ProgramCommands.Not_Recognized;
-		if (!Enum.TryParse(args[0], out command))
-		{
-			Console.WriteLine("Not recognized command.");
-			return;
-		}
-		programLookup[command].Invoke();
-		Console.ReadLine();
+		//// TreeNode ans = deser.deserialize("1;2;x;95;x;5;x;x;3;4;x;x;5;x;x;");
+		//GroupAnagrams groupAnagrams = new GroupAnagrams();
+		//groupAnagrams.GroupAnagramsFunction(new string[] { "eat", "tea", "tan", "ate", "nat", "bat" });
+
+		//return;
+
+		//if (args == null || args.Length == 0)
+		//{
+		//	Console.WriteLine("No arguments specified.");
+		//	return;
+		//}
+		//ProgramCommands command = ProgramCommands.Not_Recognized;
+		//if (!Enum.TryParse(args[0], out command))
+		//{
+		//	Console.WriteLine("Not recognized command.");
+		//	return;
+		//}
+		//programLookup[command].Invoke();
+		//Console.ReadLine();
 	}
 
 	#region COMMANDS

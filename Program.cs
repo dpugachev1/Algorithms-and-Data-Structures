@@ -73,27 +73,21 @@ public  class TrainComposition
 
 	public static void Main(string[] args)
 	{
-		InitializeProgramLookup();
+		CourseScheduleII scheduler = new CourseScheduleII();
+		int[][] pre = new int[5][];
+		pre[0] = new int[] { 1, 0 };
+		pre[1] = new int[] { 2, 0 };
+		pre[2] = new int[] { 3, 1 };
+		pre[3] = new int[] { 3, 2 };
+		pre[4] = new int[] { 0, 4 };
 
-		string S = "ddddd";
-		//if (string.IsNullOrEmpty(S)) return 0; //edge case if string is empty or null
-		int counter = 0;
-		HashSet<char> hs = new HashSet<char>();
-		foreach (char c in S)
-		{
-			if (hs.Contains(c))
-			{
-				hs.Clear();
-				hs.Add(c);
-				counter++;
-			}
-		}
-		Console.WriteLine(counter);
+		//[[1,0],[2,0],[3,1],[3,2],[0,4]]
+		scheduler.FindOrder(5, pre);
 
-		Stack<int> stk = new Stack<int>();
-		stk.Pee
 
-	//	return counter + 1;
+		//InitializeProgramLookup();
+
+		//	return counter + 1;
 
 		//	return 0;
 

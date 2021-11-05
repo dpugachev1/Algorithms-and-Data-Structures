@@ -57,12 +57,48 @@ public  class TrainComposition
 		programLookup.Add(ProgramCommands.Google_OptimalAccountBalancing, Google_OptimalAccountBalancing);
 	}
 
+
+	static int find_min(int[] A)
+	{
+		int ans = 0;
+		for (int i = 1; i < A.Length; i++)
+		{
+			if (A[i] < ans)
+			{
+				ans = A[i];
+			}
+		}
+		return ans;
+	}
+
 	public static void Main(string[] args)
 	{
 		InitializeProgramLookup();
 
-		FileSystem obj = new FileSystem();
-		obj.Mkdir("/a/b/c");
+		string S = "ddddd";
+		//if (string.IsNullOrEmpty(S)) return 0; //edge case if string is empty or null
+		int counter = 0;
+		HashSet<char> hs = new HashSet<char>();
+		foreach (char c in S)
+		{
+			if (hs.Contains(c))
+			{
+				hs.Clear();
+				hs.Add(c);
+				counter++;
+			}
+		}
+		Console.WriteLine(counter);
+
+		Stack<int> stk = new Stack<int>();
+		stk.Pee
+
+	//	return counter + 1;
+
+		//	return 0;
+
+		//FileSystem obj = new FileSystem();
+		//obj.Mkdir("/a/b/c");
 
 		//MergeKSortedLists lists = new MergeKSortedLists();
 		////[[1,4,5],[1,3,4],[2,6]]

@@ -17,9 +17,6 @@ namespace Algorithms_and_Data_Structures.Microsoft
             maxCapacity = capacity;
             dictNodes = new Dictionary<int, LinkedListNode<int[]>>(capacity);
             lruCache = new LinkedList<int[]>();
-
-
-
         }
 
             public int Get(int key)
